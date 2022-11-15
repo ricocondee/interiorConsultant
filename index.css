@@ -1,0 +1,399 @@
+:root {
+  --main-color: #181719;
+  --light-color: #ffffff;
+  --middle-color: #828282;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: var(--light-color);
+  font-family: "Montserrat", sans-serif;
+}
+
+html{
+  background-color: var(--main-color);
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+header nav ul {
+  width: 50%;
+  display: flex;
+}
+
+header nav ul li {
+  margin: 40px;
+  padding: 5px;
+}
+
+header nav ul li a:hover {
+  color: var(--middle-color) !important;
+}
+
+header nav ul li:first-child {
+  border-bottom: 3px solid var(--light-color);
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-areas: "txt img";
+  background-color: var(--main-color);
+}
+
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+footer span{
+  padding: 12px;
+  color: var(--middle-color);
+}
+
+footer span a {
+  color: var(--middle-color);
+}
+
+footer span :first-child{
+  font-weight: 700;
+}
+
+.text {
+  grid-area: txt;
+  width: 80%;
+  height: 50%;
+  align-self: center;
+  justify-self: center;
+}
+
+.text :where(h1, p, div) {
+  margin: 15px;
+}
+
+.text h1 {
+  font-family: "Lora", serif;
+  font-size: 48px;
+}
+
+.text p {
+  font-size: 24px;
+}
+
+.call__to__action {
+  width: max-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.call__to__action:hover {
+  border-bottom: 1px solid var(--light-color);
+}
+
+.call__to__action a {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.call__to__action i {
+  animation: backflip 1.5s ease-in-out 0.5s;
+}
+
+@keyframes backflip {
+  0% {
+    transform: scaleX(-1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.content {
+  grid-area: img;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .interior {
+  width: 90%;
+  height: 80%;
+}
+
+.designer__card {
+  grid-area: img;
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%);
+  width: 30%;
+  height: 25%;
+  background-color: var(--main-color);
+  position: absolute;
+  left: 65%;
+  top: 88%;
+  box-shadow: 0 6px 5px 0px #141414;
+  animation: slide 2s ease-in-out 0.5s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(150px);
+  }
+}
+
+.designer__card .designer {
+  width: fit-content;
+  height: fit-content;
+  grid-column: 2;
+  grid-row: 2/6;
+}
+
+.designer__card .designer img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.designer__card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  grid-column: 4/7;
+  grid-row: 3;
+  align-self: end;
+}
+
+.designer__card span {
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: 500;
+  grid-column: 4/7;
+  grid-row: 4;
+  align-self: center;
+  color: var(--middle-color);
+}
+
+.designer__card p {
+  font-size: 24px;
+  font-weight: 700;
+  grid-row: 6/11;
+  grid-column: 2/9;
+  justify-self: center;
+  align-self: center;
+  font-family: "Lora", serif;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  border: 3px solid var(--light-color);
+  padding: 10px 20px;
+}
+
+.logo span {
+  font-size: 14px;
+  font-family: "Lora", serif;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (min-width: 1440px) {
+  .designer__card {
+    top: 80%;
+    left: 60%;
+    width: 35%;
+  }
+  .designer__card .designer {
+    grid-row: 2/5;
+  }
+  .designer__card .designer img {
+    width: 90px;
+    height: 90px;
+  }
+  .designer__card span {
+    grid-column: 4/7;
+    grid-row: 4;
+    align-self: center;
+  }
+  .designer__card p {
+    grid-row: 5/10;
+  }
+  .content .interior {
+    width: 90%;
+    height: 70%;
+  }
+}
+
+
+@media (max-width: 900px) and (min-width: 720px){
+
+  main{
+    grid-template-columns: 100%;
+    grid-template-rows: 35% 65%;
+    grid-template-areas: "txt3" "img3";
+  }
+
+  .text{
+    grid-area: txt3;
+  }
+
+  .content{
+    grid-area: img3;
+    align-items: start;
+  }
+
+  .designer__card{
+    width: 55%;
+    height: 22%;
+    left: 35%;
+    
+  }
+
+  .designer{
+    grid-column: 2/6 !important;
+  }
+
+  .designer img{
+    width: 85px !important;
+    height:85px !important;
+   
+  }
+
+  .designer__card :where(h3, span){
+    grid-column: 4/8 !important;
+    font-size: 16px !important;
+  }
+
+  .designer__card p{
+    font-size: 24px;
+  }
+}
+
+@media (max-width:700px){
+
+  header {
+    width: 100%;
+    height: 50px;
+  }
+  header nav {
+    width: 100%;
+    height: 125%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: var(--main-color);
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  header nav label {
+    position: relative;
+    top: -45%;
+    left: 67%;
+    cursor: pointer;
+  }
+  header #chk:checked ~ nav {
+    display: flex;
+  }
+  header nav ul {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+  header nav ul li {
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+  main {
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 70%;
+    grid-template-areas: "txt2" "img2";
+  }
+  footer {
+    height: 80px;
+    align-items: center;
+  }
+  .text {
+    width: 90%;
+    height: 80%;
+    grid-area: txt2;
+  }
+  .text h1 {
+    font-size: 36px;
+  }
+  .text :where(p, div a) {
+    font-size: 14px !important;
+  }
+  .content {
+    grid-area: img2;
+    width: 95%;
+    justify-self: center;
+    
+  }
+  .content .interior {
+    height: 60%;
+    width: 100%;
+  }
+  .designer__card {
+    width: 70%;
+    height: 22%;
+    left: 22.5%;
+    top: 76%;
+  }
+  .designer img {
+    width: 60px;
+    height: 60px;
+  }
+  .designer__card h3,
+  .designer__card span {
+    grid-column: 5/10;
+  }
+  .designer__card h3 {
+    grid-row: 3;
+  }
+  .designer__card p {
+    font-size: 18px;
+    grid-row: 7/10;
+  }
+
+  #menu {
+    display: block !important;
+    font-size: 36px;
+    cursor: pointer;
+  }
+}
