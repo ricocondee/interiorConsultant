@@ -269,6 +269,8 @@ footer span :first-child{
 
   .text{
     grid-area: txt3;
+    width: 80%;
+    height: 80%;
   }
 
   .content{
@@ -276,10 +278,16 @@ footer span :first-child{
     align-items: start;
   }
 
+  .content .interior{
+    width: 80%;
+    height: 80%;
+
+  }
+
   .designer__card{
     width: 55%;
     height: 22%;
-    left: 35%;
+    left: 30%;
     
   }
 
